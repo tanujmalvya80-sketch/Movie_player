@@ -2,17 +2,25 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* border: 2px solid red; */
-  button {
-    cursor: pointer;
-  }
 }
+
+button {
+  cursor: pointer;
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
-  max-width: 100vw;
-  height: 100vh;
+  width: 100%;
+  min-height: 100vh;
   background-color: black;
+  overflow-x: hidden;
 }
+
+
+/* =========================
+   NAVBAR
+========================= */
+
 nav {
   display: flex;
   justify-content: space-between;
@@ -20,17 +28,14 @@ nav {
   align-items: center;
   position: absolute;
   width: 100%;
-  max-height: 15%;
   z-index: 100;
 }
+
 nav img {
   width: 150px;
   height: auto;
 }
-nav ul {
-  display: flex;
-  column-gap: 10px;
-}
+
 nav ul {
   text-decoration: none;
   list-style: none;
@@ -39,104 +44,155 @@ nav ul {
   justify-content: center;
   align-items: center;
 }
+
 nav ul select {
   padding: 7px 20px;
   border-radius: 5px;
-  background: none;
+  background: black;
   color: white;
 }
+
 nav ul button {
   padding: 7px 20px;
   border-radius: 5px;
-  background: none;
-  outline: none;
-  border: none;
   background-color: #e50914;
   color: white;
   font-weight: 600;
+  border: none;
+  outline: none;
 }
 
-/* main */
+
+/* =========================
+   HERO / MAIN
+========================= */
+
 main {
   background:
-    linear-gradient(rgba(0, 0, 0, 0.589), rgba(0, 0, 0, 0.843)),
+    linear-gradient(
+      rgba(0, 0, 0, 0.589),
+      rgba(0, 0, 0, 0.843)
+    ),
     url(assets/heroimg.jpg);
+
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+
   box-shadow: inset 0px 39px 50px 5px black;
+
   position: relative;
+
+  width: 100%;
   max-width: 100vw;
   height: 108vh;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
   color: white;
   z-index: 0;
-  /* border: 2px solid red; */
-  /* border:2px solid red; */
 }
 
+
 .content-main {
-  /* border:2px solid red; */
+  width: 100%;
   margin-bottom: 30px;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
+
+
 main h1 {
   font-size: 4.2vmax;
   text-align: center;
-  font-family: Arial Bold;
+  font-family: Arial Bold, Arial, sans-serif;
   margin-bottom: 16px;
 }
-main h1 span {
-  text-align: center;
-}
+
 main h3 {
   font-size: 1.3rem;
   margin-bottom: 16px;
+  text-align: center;
 }
+
 main p {
   font-size: 1rem;
   text-align: center;
 }
+
+
+/* =========================
+   EMAIL FORM
+========================= */
+
 .main-content {
   display: flex;
+  width: 100%;
+  max-width: 650px;
+
   margin-top: 25px;
+
+  gap: 8px;
 }
+
 .main-content input {
-  /* width: 370px; */
-  width: 30vmax;
-  padding: 20px 16px 13px;
+  width: 100%;
+  min-width: 0;
+
+  padding: 1.25rem 1rem 0.8125rem;
+
   background: rgba(0, 0, 0, 0.387);
+
   outline: none;
   border-radius: 3px;
   border: 1px solid gray;
+
   color: white;
+
   font-size: 18px;
+
+  box-sizing: border-box;
 }
+
 .main-content input:focus {
   outline: 2px solid white;
   outline-offset: 2px;
 }
+
 .main-content input::placeholder {
   color: rgb(225, 225, 225);
 }
+
 .main-content button {
+  flex-shrink: 0;
+
   border-radius: 3px;
   border: none;
+
   color: white;
   background-color: #e50914;
+
   outline: none;
-  font-size: x-large;
+
+  font-size: 20px;
   font-weight: 600;
-  padding: 12vmax 30vmax;
+
   padding: 0.6em 1em;
-  margin-left: 8px;
+
+  white-space: nowrap;
 }
+
+
+/* =========================
+   HERO CURVE
+========================= */
+
 .line-containter {
   background: linear-gradient(
     to right,
@@ -146,8 +202,10 @@ main p {
     #a81e62 70%,
     #2c0c1b 100%
   );
+
   height: 14%;
 }
+
 .line-over-container {
   background:
     radial-gradient(
@@ -156,272 +214,731 @@ main p {
       rgba(0, 0, 0, 0.1) 100%
     ),
     black;
+
   height: 13.49%;
 }
+
 .common-class {
   width: 100%;
+
   position: absolute;
-  bottom: 0px;
-  /* border:2px solid red; */
+  bottom: 0;
+
   z-index: 4;
-  /* border-top-left-radius: 50% 80%; */
+
   border-top-left-radius: 50% 80px;
-  /* clip-path: ellipse(100% 50% at 50% 0%); */
-  /* border-top-right-radius: 50% 80%; */
   border-top-right-radius: 50% 80px;
 }
-/* content section */
+
+
+/* =========================
+   NETFLIX CONTENT
+========================= */
+
 .content-netflix {
+  width: 100%;
   max-width: 100vw;
-  height: auto;
-  background: linear-gradient(rgba(0, 0, 0, 0), black);
+
+  min-height: 100vh;
+
+  background: linear-gradient(
+    rgba(0, 0, 0, 0),
+    black
+  );
+
   color: white;
+
   display: flex;
-  /* margin:auto; */
-  transform: translateY(-40px);
   flex-direction: column;
-  /* border: 2px solid red; */
   align-items: center;
+
   padding: 0 150px;
+
+  transform: translateY(-40px);
 }
-&::-webkit-scrollbar {
-  display: none;
+
+
+/* =========================
+   TRENDING MOVIES
+========================= */
+
+.trending-heading {
+  width: 80vw;
+
+  position: relative;
+
+  text-align: start;
+
+  margin-top: 20px;
 }
-.trending-movies::-webkit-scrollbar {
-  display: none;
-}
+
 .trending-movies {
   width: 100%;
   height: 25vmax;
-  /* border: 2px solid red; */
+
   display: flex;
+
   column-gap: 40px;
+
   padding: 30px 20px;
+
   overflow-x: auto;
-  /* justify-content: center; */
+
+  scrollbar-width: none;
 }
+
+.trending-movies::-webkit-scrollbar {
+  display: none;
+}
+
+
 .card {
   border-radius: 12px;
-  /* height: 350vmax; */
-  /* border: 2px solid red; */
+
   height: 20vmax;
-  /* height: 91%; */
+
   min-width: 17%;
+
   display: flex;
   align-items: flex-end;
+
   transition: 0.2s ease;
+
   cursor: pointer;
 }
+
 .card:hover {
   transform: scale(1.06);
 }
+
 .card h1 {
   font-size: 9vmax;
+
   color: black;
+
   -webkit-text-stroke: 0.2vmax white;
+
   transform: translateX(-30px);
+
   font-family: Arial, Helvetica, sans-serif;
 }
-/* card background */
+
+
+/* =========================
+   MOVIE BACKGROUNDS
+========================= */
+
 .backgroundfit {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
+
 .trending-movies div:nth-of-type(1) {
   background-image: url(assets/movie-img1.jpg);
 }
+
 .trending-movies div:nth-of-type(2) {
   background-image: url(assets/movie-img2.jpg);
 }
+
 .trending-movies div:nth-of-type(3) {
   background-image: url(assets/movie-img3.jpg);
 }
+
 .trending-movies div:nth-of-type(4) {
   background-image: url(assets/movie-img4.jpg);
 }
+
 .trending-movies div:nth-of-type(5) {
   background-image: url(assets/movie-img5.jpg);
 }
+
 .trending-movies div:nth-of-type(6) {
   background-image: url(assets/movie-img6.jpg);
 }
+
 .trending-movies div:nth-of-type(7) {
   background-image: url(assets/movie-img7.jpg);
 }
+
 .trending-movies div:nth-of-type(8) {
   background-image: url(assets/movie-img8.jpg);
 }
+
 .trending-movies div:nth-of-type(9) {
   background-image: url(assets/movie-img9.jpg);
 }
+
 .trending-movies div:nth-of-type(10) {
   background-image: url(assets/movie-img10.jpg);
 }
-/* card2 */
-/*
-.trending-cards
-{
-  width: 80vw;
-  min-height:fit-content;
-  border: 2px solid red;
-  margin-top:10px auto 0px;
-  display: flex;
-  /* justify-content: center; */
-/* align-items: center; 
-  column-gap:13px;
-}
-.card2
-{
-  border-radius: 15px;
-  /* border: 2px solid red; 
-  height: 45vh;
-  max-width: calc(50% - 20px);
-  cursor: pointer;
-  /* Sahi Syntax (Diagonal Gradient ke liye) */
-/* background-image: linear-gradient(to bottom right, rgb(0, 0, 110),rgb(0, 0, 106),rgb(9, 9, 94),rgb(0, 0, 72),blue,blue, black, rgb(29, 3, 3),rgb(58, 7, 7),rgb(69, 0, 0),rgb(66, 4, 4),rgb(72, 1, 1),rgb(52, 0, 0), rgb(42, 0, 0));  
-  display: flex;
-  flex-direction: column;
-  row-gap: 20px;
-  padding:30px 15px;
-  background-image: linear-gradient(195deg, #2d2643 0%, #161622 50%, #211718 100%)
-}
-*/
+
+
+/* =========================
+   REASON TO JOIN
+========================= */
+
 .trending-cards {
   width: 80vw;
+
   min-height: fit-content;
-  /* border: 2px solid red;  */
+
   margin: 20px;
+
   display: flex;
-  flex-wrap: wrap; /* Cards ko shift hone ki permission deta hai */
-  gap: 13px; /* Rows aur Columns dono ka gap maintain rakhega */
+
+  flex-wrap: wrap;
+
+  gap: 13px;
 }
-.trending-heading {
-  position: relative;
-  right: 40%;
-  text-align: start;
-}
+
 .card2 {
   border-radius: 15px;
-  height: 50vh;
 
-  /* 1. STARTING (Desktop): 1 line me 4 cards (25% minus gap) */
+  min-height: 350px;
+
   flex: 1 1 calc(25% - 13px);
 
   cursor: pointer;
+
   display: flex;
   flex-direction: column;
+
   row-gap: 20px;
+
   padding: 30px 15px;
+
   background-image: linear-gradient(
     195deg,
     #2d2643 0%,
     #161622 50%,
     #211718 100%
   );
-  box-sizing: border-box; /* Width ko control me rakhta hai */
 }
 
-/* 2. TABLETS & SMALL LAPTOPS: 1 line me 2 cards */
-@media (max-width: 1100px) {
-  .content-netflix {
-    /* border :2px solid red; */
-    max-width: 95vw;
-    margin: auto;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-  }
-  .card2 {
-    flex: 1 1 calc(50% - 13px);
-    height: auto;
-  }
-  .trending-heading {
-    right: 30%;
-  }
-  .trending-cards {
-    width: 90vw; /* Mobile par width thodi badha di taaki text tight na ho */
-    margin-top: 30px;
-  }
-  .trending-movies {
-    margin-bottom: 30px;
-  }
-}
-@media screen {
-}
-/* front page mediaquery under 960px */
-@media screen and (max-width: 960px) {
-  nav {
-    display: flex;
-    padding: 30px 30px;
-  }
-  nav img {
-    width: 100px;
-    height: auto;
-  }
-  .main-content {
-    /* border:2px solid red; */
-    flex-direction: column;
-    row-gap: 10px;
-    align-items: center;
-  }
-  .main-content input {
-    width: 50vmax;
-  }
-  main {
-    padding: 10px;
-  }
-  .re-content-input 
-  {
-    display: flex;
-  }
-  .re-content-input input
-  {
-    width: 90vmax; 
-  }
-}
-
-/* 3. MOBILE SCREENS: 1 line me 1 card */
-@media (max-width: 600px) {
-  .trending-cards {
-    width: 90vw; /* Mobile par width thodi badha di taaki text tight na ho */
-    margin-top: 30px;
-  }
-  .trending-movies {
-    margin-bottom: 30px;
-  }
-  .card2 {
-    flex: 1 1 100%; /* Poori width cover karega */
-    height: auto;
-  }
-  .trending-heading {
-    right: 20%;
-    text-align: center;
-  }
-}
-
-/* card 2 */
 .card2 p {
   color: rgb(209, 208, 208);
+
   font-size: 1em;
+
+  line-height: 1.5;
 }
-.card2 h1 {
-  color: rgb(209, 208, 208);
+
+.card2 h2 {
+  line-height: 1.2;
 }
-/* recontent */
-.re-container {
-  margin: 20px 0px;
+
+
+/* =========================
+   FAQ
+========================= */
+
+#faq-heading {
   width: 80vw;
+
+  margin-top: 2vmax;
+  margin-bottom: 1vmax;
+}
+
+.faq {
+  width: 80vw;
+
+  padding: 0.2rem;
+
+  height: auto;
+
+  font-size: x-large;
+
+  background-color: #2d2d2d;
+
+  transition: 0.3s ease;
+
+  margin-bottom: 7px;
+}
+
+.faq summary {
+  width: 100%;
+
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+
+  background-color: #2d2d2d;
+
+  min-height: 12vh;
+
+  font-size: small;
+
+  justify-content: space-between;
+
   align-items: center;
-  /* border:2px solid red; */
+
+  padding: 1rem 1.3rem;
+
+  cursor: pointer;
+
+  list-style: none;
+}
+
+.faq summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq summary h1 {
+  margin: 0;
+
+  font-size: 1.5rem;
+
+  text-align: left;
+}
+
+.faq summary span {
+  font-size: xx-large;
+
+  flex-shrink: 0;
+}
+
+.faq p {
+  border-top: 2px solid black;
+
+  padding: 1rem 1.2rem;
+
+  font-size: 1rem;
+
+  line-height: 1.5;
+}
+
+
+/* =========================
+   LAST EMAIL SECTION
+========================= */
+
+.re-container {
+  margin: 40px 0;
+
+  width: 80vw;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  align-items: center;
+
   text-align: center;
 }
+
 .re-container p {
-  align-items: center;
+  width: 100%;
+
+  text-align: center;
 }
+
+.re-content-input {
+  width: 100%;
+  max-width: 650px;
+}
+
 .re-content-input input {
-  width: 50vw;
+  width: 100%;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1100px) {
+
+  .content-netflix {
+    padding: 0 40px;
+  }
+
+  .trending-heading {
+    width: 90vw;
+  }
+
+  .trending-cards {
+    width: 90vw;
+  }
+
+  .card2 {
+    flex: 1 1 calc(50% - 13px);
+  }
+
+  .faq {
+    width: 90vw;
+  }
+
+  #faq-heading {
+    width: 90vw;
+  }
+}
+
+
+/* =====================================================
+   SMALL TABLET
+===================================================== */
+
+@media (max-width: 960px) {
+
+  nav {
+    padding: 25px 30px;
+  }
+
+  nav img {
+    width: 100px;
+  }
+
+  main {
+    padding: 20px;
+  }
+
+  .content-main {
+    width: 100%;
+    padding: 0 20px;
+  }
+
+  main h1 {
+    font-size: clamp(2.2rem, 6vw, 4rem);
+  }
+
+  main h3 {
+    font-size: 1.1rem;
+  }
+
+  main p {
+    max-width: 600px;
+  }
+
+  .main-content {
+    width: 100%;
+    max-width: 650px;
+  }
+
+  .main-content input {
+    width: 100%;
+  }
+
+  .re-content-input {
+    width: 100%;
+    max-width: 650px;
+  }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+  body {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+
+  /* NAVBAR */
+
+  nav {
+    width: 100%;
+
+    padding: 15px 20px;
+  }
+
+  nav img {
+    width: 90px;
+  }
+
+  nav ul {
+    column-gap: 6px;
+  }
+
+  nav ul select {
+    padding: 6px 10px;
+
+    font-size: 12px;
+  }
+
+  nav ul button {
+    padding: 7px 12px;
+
+    font-size: 12px;
+  }
+
+
+  /* HERO */
+
+  main {
+    width: 100%;
+    max-width: 100%;
+
+    min-height: 100vh;
+
+    height: auto;
+
+    padding: 120px 20px 100px;
+  }
+
+  .content-main {
+    width: 100%;
+
+    padding: 0;
+
+    margin-bottom: 30px;
+  }
+
+  main h1 {
+    width: 100%;
+
+    font-size: clamp(2rem, 9vw, 3rem);
+
+    line-height: 1.1;
+
+    margin-bottom: 18px;
+  }
+
+  main h3 {
+    font-size: 1rem;
+
+    line-height: 1.4;
+
+    margin-bottom: 15px;
+  }
+
+  main p {
+    width: 100%;
+
+    font-size: 0.95rem;
+
+    line-height: 1.5;
+  }
+
+
+  /* MOBILE EMAIL FORM */
+
+  .main-content {
+    width: 100%;
+    max-width: 100%;
+
+    margin-top: 20px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 12px;
+  }
+
+  .main-content input {
+    width: 100%;
+    max-width: 100%;
+
+    height: 55px;
+
+    padding: 15px;
+
+    font-size: 16px;
+  }
+
+  .main-content button {
+    align-self: center;
+
+    width: fit-content;
+
+    padding: 12px 20px;
+
+    font-size: 17px;
+  }
+
+
+  /* HERO CURVE */
+
+  .line-containter {
+    height: 10%;
+  }
+
+  .line-over-container {
+    height: 9%;
+  }
+
+  .common-class {
+    border-top-left-radius: 50% 40px;
+
+    border-top-right-radius: 50% 40px;
+  }
+
+
+  /* CONTENT */
+
+  .content-netflix {
+    width: 100%;
+    max-width: 100%;
+
+    padding: 0 20px;
+
+    transform: translateY(-20px);
+  }
+
+
+  /* TRENDING */
+
+  .trending-heading {
+    width: 100%;
+
+    right: auto;
+
+    text-align: left;
+
+    font-size: 1.4rem;
+
+    margin: 20px 0 5px;
+  }
+
+  .trending-movies {
+    width: 100%;
+
+    height: auto;
+
+    padding: 20px 5px;
+
+    column-gap: 15px;
+
+    overflow-x: auto;
+
+    margin-bottom: 20px;
+  }
+
+  .card {
+    height: 230px;
+
+    min-width: 140px;
+  }
+
+  .card h1 {
+    font-size: 80px;
+
+    transform: translateX(-15px);
+  }
+
+
+  /* REASON TO JOIN */
+
+  .trending-cards {
+    width: 100%;
+
+    margin: 20px 0;
+
+    gap: 12px;
+  }
+
+  .card2 {
+    width: 100%;
+
+    flex: 1 1 100%;
+
+    min-height: 230px;
+
+    height: auto;
+
+    padding: 25px 20px;
+  }
+
+  .card2 h2 {
+    font-size: 1.3rem;
+  }
+
+  .card2 p {
+    font-size: 0.95rem;
+
+    line-height: 1.5;
+  }
+
+
+  /* FAQ */
+
+  #faq-heading {
+    width: 100%;
+
+    font-size: 1.7rem;
+
+    margin-top: 35px;
+
+    margin-bottom: 15px;
+  }
+
+  .faq {
+    width: 100%;
+
+    font-size: 1rem;
+
+    margin-bottom: 6px;
+  }
+
+  .faq summary {
+    width: 100%;
+
+    min-height: 70px;
+
+    height: auto;
+
+    padding: 15px;
+  }
+
+  .faq summary h1 {
+    font-size: 1rem;
+
+    margin: 0;
+
+    text-align: left;
+  }
+
+  .faq summary span {
+    font-size: 2rem;
+
+    margin-left: 15px;
+  }
+
+  .faq p {
+    padding: 18px 15px;
+
+    font-size: 0.95rem;
+
+    line-height: 1.5;
+  }
+
+
+  /* LAST EMAIL */
+
+  .re-container {
+    width: 100%;
+
+    margin: 35px 0;
+
+    padding: 0;
+  }
+
+  .re-container p {
+    width: 100%;
+
+    font-size: 0.95rem;
+
+    line-height: 1.5;
+  }
+
+  .re-content-input {
+    width: 100%;
+
+    max-width: 100%;
+  }
+
+  .re-content-input input {
+    width: 100%;
+
+    max-width: 100%;
+  }
+
 }
